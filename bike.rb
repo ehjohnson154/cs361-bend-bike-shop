@@ -1,5 +1,7 @@
 # Bike
 
+
+
 class Bike
 
   STANDARD_WEIGHT = 200 # lbs
@@ -13,27 +15,14 @@ class Bike
     @price = price
     @weight = weight
     @rented = rented
-    @cargo_contents = []
+
   end
 
   def rent!
     self.rented = true
   end
 
-  def add_cargo(item)
-    self.cargo_contents << item
-  end
-
-  def remove_cargo(item)
-    self.cargo_contents.remove(item)
-  end
-
-  def pannier_capacity
-    MAX_CARGO_ITEMS
-  end
-
-  def pannier_remaining_capacity
-    MAX_CARGO_ITEMS - self.cargo_contents.size
-  end
+#removed cargo functions, moved them to new class.
+#bike now has single responsibility: the bike
 
 end
